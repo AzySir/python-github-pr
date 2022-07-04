@@ -1,5 +1,6 @@
 import sys
 import logging
+from github import *
 from planformat import *
 # 1) Configuration
 FILENAME = "plan_pr.json"
