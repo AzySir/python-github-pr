@@ -1,8 +1,17 @@
+from gzip import READ
+from pickle import REDUCE
+
+
+RED    = '\033[41m'
+YELLOW  = '\033[93m'
+GREEN   = '\033[42m'
+END = '\033[0m'
+
 def add(line):
-    return '\x1b[5;37;42m' + line + '\x1b[0m'
+    return GREEN + line + END
 
 def edit(line):
-    return '\x1b[3;37;43m' + line + '\x1b[0m'
+    return YELLOW + line + END
 
 def destroy(line):
-    return '\x1b[5;37;41m' + line + '\x1b[0m'
+    return RED + line + END

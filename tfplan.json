@@ -1,0 +1,40 @@
+
+Note: Objects have changed outside of Terraform
+
+Terraform detected the following changes made outside of Terraform since the last "terraform apply":
+
+  # module.my_team.github_team_members.team_members has changed
+  ~ resource "github_team_members" "team_members" {
+        id      = "5832300"
+        # (2 unchanged attributes hidden)
+
+      - members {
+          - role     = "member" -> null
+          - username = "AzySir" -> null
+        }
+        # (5 unchanged blocks hidden)
+    }
+
+
+Unless you have made equivalent changes to your configuration, or ignored the relevant attributes using ignore_changes, the following plan may include actions to undo or respond to these changes.
+
+
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # module.my_team.github_team_members.team_members will be updated in-place
+  ~ resource "github_team_members" "team_members" {
+        id      = "5832300"
+        # (2 unchanged attributes hidden)
+
+      + members {
+          + role     = "member"
+          + username = "AzySir"
+        }
+        # (5 unchanged blocks hidden)
+    }
+
+Plan: 0 to add, 1 to change, 0 to destroy.
